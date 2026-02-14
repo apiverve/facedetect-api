@@ -1,0 +1,112 @@
+openapi: 3.0.4
+info:
+  title: Face Detector
+  description: >-
+    Face Detector API analyzes images to detect human faces and returns bounding
+    box coordinates for each detected face.
+  termsOfService: https://apiverve.com/terms/
+  contact:
+    name: APIVerve Support
+    email: hello@apiverve.com
+    url: https://apiverve.com/contact
+  version: 1.0.0
+externalDocs:
+  description: Learn more about APIVerve
+  url: https://docs.apiverve.com?utm_source=openapi
+servers:
+  - url: https://api.apiverve.com/
+paths:
+  /v1/facedetect:
+    post:
+      summary: Detect Faces from Upload
+      description: >-
+        Detect all faces in an uploaded image and return their bounding box
+        coordinates
+      operationId: facedetect
+      parameters:
+        - name: confidence
+          in: query
+          schema:
+            type: number
+          required: false
+          description: Minimum confidence threshold for face detection (0.1 to 1.0)
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: status
+                  error:
+                    type: string
+                    description: error
+                  data:
+                    type: object
+                    description: data
+              example:
+                status: ok
+                error: null
+                data:
+                  faces:
+                    - x: 142
+                      'y': 85
+                      width: 98
+                      height: 112
+                      confidence: 0.9847
+                    - x: 312
+                      'y': 92
+                      width: 87
+                      height: 103
+                      confidence: 0.9623
+                    - x: 478
+                      'y': 78
+                      width: 95
+                      height: 118
+                      confidence: 0.9412
+                  faceCount: 3
+                  hasFaces: true
+                  imageWidth: 640
+                  imageHeight: 480
+                code: 200
+        '401':
+          description: Your request was not authorized, or your API Key was invalid
+        '404':
+          description: Requested resource was not found
+        '500':
+          description: A server error has occurred, try again later
+      requestBody:
+        required: false
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                image:
+                  type: string
+                  format: binary
+                  description: >-
+                    File to upload (accepted: .jpg, .jpeg, .png, .gif, .webp,
+                    max 10MB)
+                  acceptedTypes:
+                    - .jpg
+                    - .jpeg
+                    - .png
+                    - .gif
+                    - .webp
+                  maxSizeMB: 10
+              required: []
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: x-api-key
+      in: header
+security:
+  - api_key: []
+sampleRequest:
+  url: https://example.com/group-photo.jpg
+  confidence: 0.5
