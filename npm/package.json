@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/facedetect",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "description": "Face Detector API analyzes images to detect human faces and returns bounding box coordinates for each detected face.",
   "main": "index.js",
   "types": "index.d.ts",
