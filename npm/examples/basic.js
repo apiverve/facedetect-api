@@ -24,7 +24,6 @@ console.log('Making request to Face Detector API...\n');
 api.executeWithFile(filePath,
     {
         fields: {
-        url: 'example',
         confidence: 0.5
         }
     }, function (error, data) {
