@@ -12,8 +12,13 @@ public class BasicExample {
         FaceDetectorAPIClient client = new FaceDetectorAPIClient("YOUR_API_KEY_HERE");
 
         try {
-            // Execute the API request (no parameters required)
-            APIResponse response = client.execute(null);
+            // Request body
+            Map&lt;String, Object&gt; parameters &#x3D; new HashMap&lt;&gt;();
+        parameters.put(&quot;url&quot;, &quot;https://example.com/group-photo.jpg&quot;);
+        parameters.put(&quot;confidence&quot;, 0.5);
+
+            // Execute the API request
+            APIResponse response = client.execute(parameters);
 
             // Check if the request was successful
             if (response.isSuccess()) {
