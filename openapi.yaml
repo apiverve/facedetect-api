@@ -71,6 +71,8 @@ paths:
                   hasFaces: true
                   imageWidth: 640
                   imageHeight: 480
+                  averageConfidence: 0.9627
+                  imageCoverage: 10.23
                 code: 200
         '401':
           description: Your request was not authorized, or your API Key was invalid
