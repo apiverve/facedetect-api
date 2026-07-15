@@ -70,13 +70,11 @@ Pass additional parameters via `options.fields`:
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `url` | string | URL of the image to analyze (JPG, PNG, GIF, WebP supported) *(required)* |
 | `confidence` | number | Minimum confidence threshold for face detection (0.1 to 1.0) |
 
 ```javascript
 api.executeWithFile('/path/to/file', {
     fields: {
-        url: 'example',
         confidence: 0.5
     }
 });
@@ -96,7 +94,6 @@ var filePath = '/path/to/image.jpg';
 api.executeWithFile(filePath,
     {
         fields: {
-        url: 'example',
         confidence: 0.5
         }
     }, function (error, data) {
@@ -184,7 +181,9 @@ var filePath = '/path/to/image.jpg';
     "faceCount": 3,
     "hasFaces": true,
     "imageWidth": 640,
-    "imageHeight": 480
+    "imageHeight": 480,
+    "averageConfidence": 0.9627,
+    "imageCoverage": 10.23
   },
   "code": 200
 }
