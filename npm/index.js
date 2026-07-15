@@ -30,7 +30,7 @@ class facedetectWrapper {
         this.baseURL = 'https://api.apiverve.com/v1/facedetect';
 
         // Validation rules for parameters (generated from schema)
-        this.validationRules = {"url":{"type":"string","required":true,"format":"url"},"confidence":{"type":"number","required":false,"min":0.1,"max":1,"default":0.5}};
+        this.validationRules = {"image":{"type":"string","required":true},"confidence":{"type":"number","required":false,"min":0.1,"max":1,"default":0.5}};
     }
 
     /**
