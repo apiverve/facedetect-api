@@ -25,6 +25,9 @@ namespace APIVerve.API.FaceDetector
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
@@ -33,33 +36,51 @@ namespace APIVerve.API.FaceDetector
         public Face[] Faces { get; set; }
 
         [JsonProperty("faceCount")]
-        public long FaceCount { get; set; }
+        public long? FaceCount { get; set; }
 
         [JsonProperty("hasFaces")]
-        public bool HasFaces { get; set; }
+        public bool? HasFaces { get; set; }
 
         [JsonProperty("imageWidth")]
-        public long ImageWidth { get; set; }
+        public long? ImageWidth { get; set; }
 
         [JsonProperty("imageHeight")]
-        public long ImageHeight { get; set; }
+        public long? ImageHeight { get; set; }
+
+        [JsonProperty("averageConfidence")]
+        public double? AverageConfidence { get; set; }
+
+        [JsonProperty("imageCoverage")]
+        public double? ImageCoverage { get; set; }
     }
 
     public partial class Face
     {
         [JsonProperty("x")]
-        public long X { get; set; }
+        public long? X { get; set; }
 
         [JsonProperty("y")]
-        public long Y { get; set; }
+        public long? Y { get; set; }
 
         [JsonProperty("width")]
-        public long Width { get; set; }
+        public long? Width { get; set; }
 
         [JsonProperty("height")]
-        public long Height { get; set; }
+        public long? Height { get; set; }
 
         [JsonProperty("confidence")]
-        public double Confidence { get; set; }
+        public double? Confidence { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
