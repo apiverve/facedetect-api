@@ -11,15 +11,15 @@ namespace APIVerve.API.FaceDetector
     public class FaceDetectorQueryOptions
     {
         /// <summary>
-        /// URL of the image to analyze (JPG, PNG, GIF, WebP supported)
+        /// Image file upload (JPG, PNG, GIF, WebP supported, max 10MB)
         /// </summary>
-        [JsonProperty("url")]
-        public string Url { get; set; }
+        [JsonProperty("image")]
+        public string Image { get; set; }
 
         /// <summary>
         /// Minimum confidence threshold for face detection (0.1 to 1.0)
         /// </summary>
         [JsonProperty("confidence")]
-        public string Confidence { get; set; }
+        public double? Confidence { get; set; }
     }
 }
