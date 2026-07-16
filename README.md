@@ -196,11 +196,57 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the Face Detector API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "faces": [
+      {
+        "x": 142,
+        "y": 85,
+        "width": 98,
+        "height": 112,
+        "confidence": 0.9847
+      },
+      {
+        "x": 312,
+        "y": 92,
+        "width": 87,
+        "height": 103,
+        "confidence": 0.9623
+      },
+      {
+        "x": 478,
+        "y": 78,
+        "width": 95,
+        "height": 118,
+        "confidence": 0.9412
+      }
+    ],
+    "faceCount": 3,
+    "hasFaces": true,
+    "imageWidth": 640,
+    "imageHeight": 480,
+    "averageConfidence": 0.9627,
+    "imageCoverage": 10.23
+  },
+  "code": 200
 }
 ```
 
