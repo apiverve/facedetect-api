@@ -1,7 +1,7 @@
 {
   "name": "@apiverve/facedetect",
-  "version": "1.2.0",
-  "description": "Face Detector API analyzes images to detect human faces and returns bounding box coordinates for each detected face.",
+  "version": "1.2.2",
+  "description": "Face Detector is a face detection API that analyzes an image and reports whether it contains human faces. Paid plans add the face count and bounding box coordinates with a confidence score for each detected face.",
   "main": "index.js",
   "types": "index.d.ts",
   "sideEffects": false,
@@ -23,7 +23,7 @@
     "directory": "npm"
   },
   "keywords": [
-    "face detector", "face detection api", "detect faces", "face recognition", "face bounding box"
+    "face detection api", "face detector api", "free face detection api", "api face detection", "detect faces in image"
   ],
   "author": {
     "name": "APIVerve",
@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/apiverve/facedetect-api/issues"
   },
-  "homepage": "https://apiverve.com/marketplace/facedetect?utm_source=npm&utm_medium=homepage",
+  "homepage": "https://apiverve.com/marketplace/facedetect?utm_source=npm&utm_medium=referral&utm_content=homepage",
   "devDependencies": {
     "mocha": "^11.0.1",
     "chai": "^5.1.2",
