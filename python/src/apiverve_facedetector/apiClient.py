@@ -1,6 +1,6 @@
 import re
-from typing import Dict, Optional, Any
-from dataclasses import dataclass, List
+from typing import Dict, Optional, Any, List
+from dataclasses import dataclass
 import requests
 
 
@@ -24,7 +24,7 @@ class ValidationError(FacedetectAPIClientError):
 class FacedetectAPIClient:
     # Validation rules for parameters (generated from schema)
     VALIDATION_RULES = {
-        "url": {"type": "string", "required": True, "format": "url"},
+        "image": {"type": "string", "required": True},
         "confidence": {"type": "number", "required": False, "min": 0.1, "max": 1, "default": 0.5}
     }
 
