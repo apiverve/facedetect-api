@@ -2,8 +2,9 @@ openapi: 3.0.4
 info:
   title: Face Detector
   description: >-
-    Face Detector API analyzes images to detect human faces and returns bounding
-    box coordinates for each detected face.
+    Face Detector is a face detection API that analyzes an image and reports
+    whether it contains human faces. Paid plans add the face count and bounding
+    box coordinates with a confidence score for each detected face.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -18,7 +19,7 @@ servers:
 paths:
   /v1/facedetect:
     post:
-      summary: Detect Faces from Upload
+      summary: Face Detector
       description: >-
         Detect all faces in an uploaded image and return their bounding box
         coordinates
@@ -93,14 +94,13 @@ paths:
                   description: >-
                     File to upload (accepted: .jpg, .jpeg, .png, .gif, .webp,
                     max 10MB)
-                  acceptedTypes:
+                  x-acceptedTypes:
                     - .jpg
                     - .jpeg
                     - .png
                     - .gif
                     - .webp
-                  maxSizeMB: 10
-              required: []
+                  x-maxSizeMB: 10
 components:
   securitySchemes:
     api_key:
@@ -110,5 +110,5 @@ components:
 security:
   - api_key: []
 sampleRequest:
-  url: https://example.com/group-photo.jpg
+  url: https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=640
   confidence: 0.5

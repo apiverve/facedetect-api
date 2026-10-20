@@ -15,7 +15,7 @@ async function callFaceDetectorAPI() {
   try {
     // Request body
     const requestBody &#x3D; {
-    &quot;url&quot;: &quot;https://example.com/group-photo.jpg&quot;,
+    &quot;url&quot;: &quot;https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w&#x3D;640&quot;,
     &quot;confidence&quot;: 0.5
 };
 

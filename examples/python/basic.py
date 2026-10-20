@@ -19,7 +19,7 @@ def call_facedetect_api():
     try:
         # Request body
         request_body &#x3D; {
-    &#x27;url&#x27;: &#x27;https://example.com/group-photo.jpg&#x27;,
+    &#x27;url&#x27;: &#x27;https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w&#x3D;640&#x27;,
     &#x27;confidence&#x27;: 0.5
 }
 

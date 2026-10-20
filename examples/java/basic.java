@@ -14,7 +14,7 @@ public class BasicExample {
         try {
             // Request body
             Map&lt;String, Object&gt; parameters &#x3D; new HashMap&lt;&gt;();
-        parameters.put(&quot;url&quot;, &quot;https://example.com/group-photo.jpg&quot;);
+        parameters.put(&quot;url&quot;, &quot;https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w&#x3D;640&quot;);
         parameters.put(&quot;confidence&quot;, 0.5);
 
             // Execute the API request

@@ -1,13 +1,13 @@
-# [Face Detector API](https://apiverve.com/marketplace/facedetect?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+# [Face Detector API](https://apiverve.com/marketplace/facedetect?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-Face Detector API analyzes images to detect human faces and returns bounding box coordinates for each detected face.
+Face Detector is a face detection API that analyzes an image and reports whether it contains human faces. Paid plans add the face count and bounding box coordinates with a confidence score for each detected face.
 
 The Face Detector API provides a simple, reliable way to integrate face detector functionality into your applications. Built for developers who need production-ready face detector capabilities without the complexity of building from scratch.
 
-**[View API Details →](https://apiverve.com/marketplace/facedetect?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
+**[View API Details →](https://apiverve.com/marketplace/facedetect?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/facedetect?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/facedetect?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 [![Method](https://img.shields.io/badge/Method-POST-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
@@ -31,7 +31,7 @@ The Face Detector API provides a simple, reliable way to integrate face detector
 async function callFaceDetectorAPI() {
     try {
         const requestBody = {
-    "url": "https://example.com/group-photo.jpg",
+    "url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=640",
     "confidence": 0.5
 };
 
@@ -166,7 +166,7 @@ go get github.com/apiverve/facedetect-api/go
 
 ## Documentation
 
-- 🏠 **API Home:** [Face Detector API](https://apiverve.com/marketplace/facedetect?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home:** [Face Detector API](https://apiverve.com/marketplace/facedetect?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 📚 **API Reference:** [docs.apiverve.com/ref/facedetect](https://docs.apiverve.com/ref/facedetect)
 - 📖 **OpenAPI Spec:** [openapi.yaml](./openapi.yaml)
 - 💡 **Examples:** [examples/](./examples/)
@@ -254,7 +254,7 @@ A real response from the Face Detector API:
 
 ## Support & Community
 
-- 🏠 **API Home**: [Face Detector API](https://apiverve.com/marketplace/facedetect?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home**: [Face Detector API](https://apiverve.com/marketplace/facedetect?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 💬 **Support**: [https://apiverve.com/contact](https://apiverve.com/contact)
 - 🐛 **Issues**: [GitHub Issues](../../issues)
 - 📖 **Documentation**: [https://docs.apiverve.com](https://docs.apiverve.com)
