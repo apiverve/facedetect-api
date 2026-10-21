@@ -15,11 +15,11 @@ use APIVerve\Facedetect\Exceptions\ValidationException;
  * @example Basic usage
  * ```php
  * $client = new Client('your_api_key');
- * $response = $client->execute(['url' => 'https://example.com/group-photo.jpg', 'confidence' => 0.5]);
+ * $response = $client->execute(['url' => 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=640', 'confidence' => 0.5]);
  * print_r($response);
  * ```
  *
- * @see https://apiverve.com/marketplace/facedetect?utm_source=php&utm_medium=readme
+ * @see https://apiverve.com/marketplace/facedetect?utm_source=php&utm_medium=referral&utm_content=readme
  */
 class Client
 {

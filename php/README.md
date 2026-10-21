@@ -1,6 +1,6 @@
 # Face Detector API - PHP Package
 
-Face Detector API analyzes images to detect human faces and returns bounding box coordinates for each detected face.
+Face Detector is a face detection API that analyzes an image and reports whether it contains human faces. Paid plans add the face count and bounding box coordinates with a confidence score for each detected face.
 
 ## Installation
 
@@ -28,7 +28,7 @@ $client = new Client('YOUR_API_KEY');
 
 // Make a request
 $response = $client->execute([
-    'url' => 'https://example.com/group-photo.jpg',
+    'url' => 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=640',
     'confidence' => 0.5
 ]);
 
@@ -54,7 +54,7 @@ use APIVerve\Facedetect\Exceptions\APIException;
 use APIVerve\Facedetect\Exceptions\ValidationException;
 
 try {
-    $response = $client->execute(['url' => 'https://example.com/group-photo.jpg', 'confidence' => 0.5]);
+    $response = $client->execute(['url' => 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=640', 'confidence' => 0.5]);
     print_r($response['data']);
 } catch (ValidationException $e) {
     echo "Validation error: " . implode(', ', $e->getErrors());
@@ -122,11 +122,11 @@ $client = new Client(
 
 ## Documentation
 
-For more information, visit the [API Documentation](https://docs.apiverve.com/ref/facedetect?utm_source=packagist&utm_medium=readme).
+For more information, visit the [API Documentation](https://docs.apiverve.com/ref/facedetect?utm_source=packagist&utm_medium=referral&utm_content=readme).
 
 ## Support
 
-- Website: [https://apiverve.com/marketplace/facedetect?utm_source=php&utm_medium=readme](https://apiverve.com/marketplace/facedetect?utm_source=php&utm_medium=readme)
+- Website: [https://apiverve.com/marketplace/facedetect?utm_source=php&utm_medium=referral&utm_content=readme](https://apiverve.com/marketplace/facedetect?utm_source=php&utm_medium=referral&utm_content=readme)
 - Email: hello@apiverve.com
 
 ## License
