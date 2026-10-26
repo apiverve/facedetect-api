@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/facedetect",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Face Detector is a face detection API that analyzes an image and reports whether it contains human faces. Paid plans add the face count and bounding box coordinates with a confidence score for each detected face.",
   "main": "index.js",
   "types": "index.d.ts",
