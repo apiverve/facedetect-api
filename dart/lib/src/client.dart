@@ -48,10 +48,10 @@ final _formatPatterns = {
 
 /// Face Detector API client.
 ///
-/// For more information, visit: https://apiverve.com/marketplace/facedetect?utm_source=dart&utm_medium=readme
+/// For more information, visit: https://apiverve.com/marketplace/facedetect?utm_source=dart&utm_medium=referral&utm_content=readme
 ///
 /// Parameters:
-/// * [url] (required) - URL of the image to analyze (JPG, PNG, GIF, WebP supported) [format: url]
+/// * [image] (required) - Image file upload (JPG, PNG, GIF, WebP supported, max 10MB)
 /// * [confidence] - Minimum confidence threshold for face detection (0.1 to 1.0) [min: 0.1, max: 1]
 class FacedetectClient {
   final String apiKey;
@@ -60,7 +60,7 @@ class FacedetectClient {
 
   /// Validation rules for parameters.
   static final Map<String, ValidationRule> _validationRules = <String, ValidationRule>{
-    'url': ValidationRule(type: 'string', required: true, format: 'url'),
+    'image': ValidationRule(type: 'string', required: true),
     'confidence': ValidationRule(type: 'number', required: false, min: 0.1, max: 1),
   };
 

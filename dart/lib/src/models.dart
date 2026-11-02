@@ -6,22 +6,50 @@ class FacedetectResponse {
   final dynamic error;
   final FacedetectData? data;
 
+  /// Set only when the current plan locks one or more fields; null otherwise.
+  final PremiumInfo? premium;
+
   FacedetectResponse({
     required this.status,
     this.error,
     this.data,
+    this.premium,
   });
 
   factory FacedetectResponse.fromJson(Map<String, dynamic> json) => FacedetectResponse(
     status: json['status'] as String? ?? '',
     error: json['error'],
     data: json['data'] != null ? FacedetectData.fromJson(json['data']) : null,
+    premium: json['premium'] != null ? PremiumInfo.fromJson(json['premium']) : null,
   );
 
   Map<String, dynamic> toJson() => {
     'status': status,
     if (error != null) 'error': error,
     if (data != null) 'data': data,
+    if (premium != null) 'premium': premium!.toJson(),
+  };
+}
+
+/// Describes fields the current plan does not unlock. Locked fields arrive as null
+/// in [data], and [lockedFields] names them (nested ones use dot paths).
+class PremiumInfo {
+  final String? message;
+  final String? upgradeUrl;
+  final List<String>? lockedFields;
+
+  PremiumInfo({this.message, this.upgradeUrl, this.lockedFields});
+
+  factory PremiumInfo.fromJson(Map<String, dynamic> json) => PremiumInfo(
+    message: json['message'] as String?,
+    upgradeUrl: json['upgrade_url'] as String?,
+    lockedFields: (json['locked_fields'] as List?)?.map((e) => e.toString()).toList(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    if (message != null) 'message': message,
+    if (upgradeUrl != null) 'upgrade_url': upgradeUrl,
+    if (lockedFields != null) 'locked_fields': lockedFields,
   };
 }
 
@@ -29,10 +57,12 @@ class FacedetectResponse {
 
 class FacedetectData {
   List<FacedetectDataFacesItem>? faces;
-  int? faceCount;
+  num? faceCount;
   bool? hasFaces;
-  int? imageWidth;
-  int? imageHeight;
+  num? imageWidth;
+  num? imageHeight;
+  num? averageConfidence;
+  num? imageCoverage;
 
   FacedetectData({
     this.faces,
@@ -40,6 +70,8 @@ class FacedetectData {
     this.hasFaces,
     this.imageWidth,
     this.imageHeight,
+    this.averageConfidence,
+    this.imageCoverage,
   });
 
   factory FacedetectData.fromJson(Map<String, dynamic> json) => FacedetectData(
@@ -48,15 +80,17 @@ class FacedetectData {
       hasFaces: json['hasFaces'],
       imageWidth: json['imageWidth'],
       imageHeight: json['imageHeight'],
+      averageConfidence: json['averageConfidence'],
+      imageCoverage: json['imageCoverage'],
     );
 }
 
 class FacedetectDataFacesItem {
-  int? x;
-  int? y;
-  int? width;
-  int? height;
-  double? confidence;
+  num? x;
+  num? y;
+  num? width;
+  num? height;
+  num? confidence;
 
   FacedetectDataFacesItem({
     this.x,
@@ -76,16 +110,16 @@ class FacedetectDataFacesItem {
 }
 
 class FacedetectRequest {
-  String url;
-  double? confidence;
+  String? url;
+  num? confidence;
 
   FacedetectRequest({
-    required this.url,
+    this.url,
     this.confidence,
   });
 
   Map<String, dynamic> toJson() => {
-      'url': url,
+      if (url != null) 'url': url,
       if (confidence != null) 'confidence': confidence,
     };
 }

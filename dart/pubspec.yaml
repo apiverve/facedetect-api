@@ -1,7 +1,7 @@
 name: apiverve_facedetect
-description: Face Detector API analyzes images to detect human faces and returns bounding box coordinates for each detected face.
-version: 1.1.14
-homepage: https://apiverve.com/marketplace/facedetect?utm_source=dart&utm_medium=homepage
+description: "Face Detector is a face detection API that analyzes an image and reports whether it contains human faces. Paid plans add the face count and bounding box coordinates with a confidence score for each detected face."
+version: 1.2.4
+homepage: https://apiverve.com/marketplace/facedetect?utm_source=dart&utm_medium=referral&utm_content=homepage
 repository: https://github.com/apiverve/facedetect-api/tree/main/dart
 
 environment:

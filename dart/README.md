@@ -1,11 +1,11 @@
 # Face Detector API - Dart/Flutter Client
 
-Face Detector API analyzes images to detect human faces and returns bounding box coordinates for each detected face.
+Face Detector is a face detection API that analyzes an image and reports whether it contains human faces. Paid plans add the face count and bounding box coordinates with a confidence score for each detected face.
 
 [![pub package](https://img.shields.io/pub/v/apiverve_facedetect.svg)](https://pub.dev/packages/apiverve_facedetect)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This is the Dart/Flutter client for the [Face Detector API](https://apiverve.com/marketplace/facedetect?utm_source=dart&utm_medium=readme).
+This is the Dart/Flutter client for the [Face Detector API](https://apiverve.com/marketplace/facedetect?utm_source=dart&utm_medium=referral&utm_content=readme).
 
 ## Installation
 
@@ -13,7 +13,7 @@ Add this to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  apiverve_facedetect: ^1.1.14
+  apiverve_facedetect: ^1.2.4
 ```
 
 Then run:
@@ -33,10 +33,8 @@ void main() async {
   final client = FacedetectClient('YOUR_API_KEY');
 
   try {
-    final response = await client.execute({
-      'url': 'https://example.com/group-photo.jpg',
-      'confidence': 0.5
-    });
+    // This API requires a file upload — a JSON body is rejected with a 400.
+    final response = await client.executeWithFile('/path/to/your-file');
 
     print('Status: ${response.status}');
     print('Data: ${response.data}');
@@ -79,7 +77,9 @@ void main() async {
     "faceCount": 3,
     "hasFaces": true,
     "imageWidth": 640,
-    "imageHeight": 480
+    "imageHeight": 480,
+    "averageConfidence": 0.9627,
+    "imageCoverage": 10.23
   },
   "code": 200
 }
@@ -87,12 +87,12 @@ void main() async {
 
 ## API Reference
 
-- **API Home:** [Face Detector API](https://apiverve.com/marketplace/facedetect?utm_source=dart&utm_medium=readme)
-- **Documentation:** [docs.apiverve.com/ref/facedetect](https://docs.apiverve.com/ref/facedetect?utm_source=dart&utm_medium=readme)
+- **API Home:** [Face Detector API](https://apiverve.com/marketplace/facedetect?utm_source=dart&utm_medium=referral&utm_content=readme)
+- **Documentation:** [docs.apiverve.com/ref/facedetect](https://docs.apiverve.com/ref/facedetect?utm_source=dart&utm_medium=referral&utm_content=readme)
 
 ## Authentication
 
-All requests require an API key. Get yours at [apiverve.com](https://apiverve.com?utm_source=dart&utm_medium=readme).
+All requests require an API key. Get yours at [apiverve.com](https://apiverve.com?utm_source=dart&utm_medium=referral&utm_content=readme).
 
 ## License
 
@@ -100,4 +100,4 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 ---
 
-Built with Dart for [APIVerve](https://apiverve.com?utm_source=dart&utm_medium=readme)
+Built with Dart for [APIVerve](https://apiverve.com?utm_source=dart&utm_medium=referral&utm_content=readme)
